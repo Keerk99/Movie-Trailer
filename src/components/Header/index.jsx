@@ -36,6 +36,7 @@ const DivHeader = styled.div`
 
 const Img = styled.img`
   width: 300px;
+  height: 100%;
   cursor: pointer;
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 200px;
@@ -71,6 +72,7 @@ const Input = styled.input`
     font-size: 0.5rem;
     padding: 0.4rem 0.5rem;
     font-weight: 200;
+    height: 60%;
   }
 `;
 
