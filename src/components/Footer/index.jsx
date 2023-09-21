@@ -35,7 +35,7 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Div>
-        <P>© Copyright Desarrollado por Antony Huaman</P>
+        <P>© Copyright Developed by Antony Huaman</P>
         <span>2023</span>
       </Div>
     </FooterContainer>
