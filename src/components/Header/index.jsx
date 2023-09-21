@@ -40,12 +40,15 @@ const Img = styled.img`
   cursor: pointer;
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 200px;
+    height: 80%;
   }
   @media screen and (min-width: 425px) and (max-width: 767px) {
     width: 150px;
+    height: 60%;
   }
   @media screen and (min-width: 0) and (max-width: 424px) {
     width: 100px;
+    height: 50%;
   }
 `;
 
@@ -59,20 +62,23 @@ const Input = styled.input`
   color: #e7e7e7;
   outline: none;
   font-family: "Roboto Slab", sans-serif;
+  height: 60%;
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     font-size: 1rem;
     padding: 0.7rem 1.5rem;
+    height: 55%;
   }
   @media screen and (min-width: 425px) and (max-width: 767px) {
     font-size: 0.7rem;
     padding: 0.5rem 1rem;
     font-weight: 200;
+    height: 50%;
   }
   @media screen and (min-width: 0) and (max-width: 424px) {
     font-size: 0.5rem;
     padding: 0.4rem 0.5rem;
     font-weight: 200;
-    height: 60%;
+    height: 40%;
   }
 `;
 
