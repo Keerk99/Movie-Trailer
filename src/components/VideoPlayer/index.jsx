@@ -2,6 +2,8 @@ import styled from "styled-components";
 import ReactPlayer from "react-player";
 import { BsPlayCircle } from "react-icons/bs";
 import { SlClose } from "react-icons/sl";
+import img_no_video from "../../assets/img/img_no_video.png";
+import { RiEmotionSadLine } from "react-icons/ri";
 
 const Div = styled.div`
   background: url(${(props) => props.$bg || "#6bd1ff"}) no-repeat center / cover;
@@ -147,6 +149,46 @@ const DivVideo = styled.div`
   }
 `;
 
+const DivNoVideo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+`;
+
+const H2 = styled.h2`
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #e7e7e7;
+  font-size: 1.5rem;
+  @media screen and (min-width: 425px) and (max-width: 1023px) {
+    font-size: 1.2rem;
+  }
+  @media screen and (min-width: 0) and (max-width: 424px) {
+    font-size: 1rem;
+  }
+`;
+
+const Img = styled.img`
+  width: 250px;
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 150px;
+  }
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    width: 120px;
+  }
+  @media screen and (min-width: 0) and (max-width: 424px) {
+    width: 100px;
+  }
+`;
+
 export default function VideoPlayer({
   selectedMovie,
   playTrailer = false,
@@ -169,7 +211,14 @@ export default function VideoPlayer({
         />
       );
     } else {
-      return <div>There's no video yet</div>;
+      return (
+        <DivNoVideo>
+          <H2>
+            There's no video yet <RiEmotionSadLine />
+          </H2>
+          <Img src={img_no_video} alt="There's no video" />
+        </DivNoVideo>
+      );
     }
   };
   return (

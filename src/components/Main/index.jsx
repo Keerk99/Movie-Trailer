@@ -4,6 +4,7 @@ import MovieCard from "../MovieCard";
 import styled from "styled-components";
 import { searchContext } from "../../App";
 import VideoPlayer from "../VideoPlayer";
+import NoResults from "../NoResults";
 
 const MainContent = styled.main`
   display: flex;
@@ -40,15 +41,12 @@ const Title = styled.h1`
   padding: 0;
   @media screen and (min-width: 1024px) and (max-width: 1439px) {
     font-size: 2.5rem;
-    margin: 0;
   }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     font-size: 2rem;
-    margin: 0 0 2rem;
   }
   @media screen and (min-width: 425px) and (max-width: 767px) {
     font-size: 1.5rem;
-    margin: 0 0 2rem;
   }
   @media screen and (min-width: 0) and (max-width: 424px) {
     font-size: 1.2rem;
@@ -123,20 +121,26 @@ export default function Main() {
         />
       </SectionPreview>
       <Section>
-        <Title>New Releases</Title>
-        <Div>
-          {movies && movies.length > 0 ? (
-            movies.map((movie) => (
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                selectedMovie={selectMovie}
-              />
-            ))
-          ) : (
-            <div>There's no videos of what your searching</div>
-          )}
-        </Div>
+        {movies && movies.length > 0 ? (
+          <>
+            {searchKey === "" ? (
+              <Title>New Releases</Title>
+            ) : (
+              <Title>Results of {searchKey}</Title>
+            )}
+            <Div>
+              {movies.map((movie) => (
+                <MovieCard
+                  key={movie.id}
+                  movie={movie}
+                  selectedMovie={selectMovie}
+                />
+              ))}
+            </Div>
+          </>
+        ) : (
+          <NoResults />
+        )}
       </Section>
     </MainContent>
   );

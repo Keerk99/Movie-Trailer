@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ReleaseDate } from "../DateFormat";
 import { AiFillStar } from "react-icons/ai";
+import { RiEmotionSadLine } from "react-icons/ri";
 
 const MovieCardContainer = styled.div`
   display: flex;
@@ -120,6 +121,12 @@ const SpanDate = styled.span`
   }
 `;
 
+const NDContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+
 export default function MovieCard({ movie, selectedMovie }) {
   const img_path = "https://image.tmdb.org/t/p/original/";
 
@@ -153,7 +160,11 @@ export default function MovieCard({ movie, selectedMovie }) {
         </>
       ) : (
         <>
-          <h5>No Image Found</h5>
+          <NDContainer>
+            <H2>
+              No Data Found <RiEmotionSadLine />
+            </H2>
+          </NDContainer>
         </>
       )}
     </MovieCardContainer>
